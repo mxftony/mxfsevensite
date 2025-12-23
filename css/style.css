@@ -2054,3 +2054,40 @@ a:focus {
 .footer .copyright p a:hover {
     color: #ffffff;
 }
+
+/* SnapWidget responsive fix */
+.snapwidget-wrapper {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 12px 0;
+    overflow: hidden;
+}
+.snapwidget-widget {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 320px; /* default visual base for desktop */
+    border: 0;
+    overflow: hidden;
+    margin: 0 auto;
+    transform-origin: top center;
+}
+/* Desktop: increase image size and reduce whitespace under widget (desktop-only tweaks) */
+@media (min-width: 1200px) {
+    .snapwidget-widget { transform: scale(1.55); }
+    .snapwidget-wrapper { max-height: 340px; padding: 4px 0; margin-bottom: 6px !important; }
+    .snapwidget-widget { transform-origin: top center; }
+    .about { padding-top: 12px; }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .snapwidget-widget { transform: scale(1.35); }
+    .snapwidget-wrapper { max-height: 320px; padding: 4px 0; margin-bottom: 8px !important; }
+    .about { padding-top: 18px; }
+}
+@media (max-width: 991.98px) {
+    .snapwidget-widget { transform: none; height: 220px; }
+}
+@media (max-width: 576px) {
+    .snapwidget-widget { height: 160px; }
+}
