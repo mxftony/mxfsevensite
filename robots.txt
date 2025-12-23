@@ -1,0 +1,11 @@
+# robots.txt for MXF SEVEN
+# Allow all crawlers but block backend and library folders
+User-agent: *
+Disallow: /mail/
+Disallow: /lib/
+Allow: /
+
+# Sitemap location
+Sitemap: https://mxfseven.com/sitemap.xml
+# Host (optional)
+Host: https://mxfseven.com

@@ -1,0 +1,4 @@
+Contact: mailto:contact@mxfseven.com
+Encryption: https://mxfseven.com/pgp-key.txt
+Acknowledgements: https://mxfseven.com/security-acknowledgements.html
+Preferred-Languages: en, ro
