@@ -260,6 +260,130 @@
     </div>
 </div>
         <!-- Service End -->
+         <!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Before & After Slider</title>
+  <style>
+    .ba-slider {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      margin: 30px auto;
+      overflow: hidden;
+      border: 1px solid #333;
+      border-radius: 8px;
+      touch-action: none; /* important pentru mobil */
+    }
+
+    .ba-slider img {
+      display: block;
+      width: 100%;
+      height: auto;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .ba-slider .after-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 45%; /* început slider puțin mai jos (45%) */
+      overflow: hidden;
+    }
+
+    .ba-slider .after-img img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .ba-slider .slider-handle {
+      position: absolute;
+      top: 45%;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #E81C2E;
+      cursor: ns-resize;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    /* Make slider even smaller on very small screens */
+    @media (max-width: 576px) {
+      .ba-slider {
+        max-width: 320px;
+        margin: 18px auto;
+      }
+      .ba-slider .after-img {
+        height: 42%;
+      }
+      .ba-slider .slider-handle {
+        height: 3px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ba-slider">
+    <img src="img/before.jpg" alt="Before">
+    <div class="after-img">
+      <img src="img/after.jpg" alt="After">
+    </div>
+    <div class="slider-handle"></div>
+  </div>
+
+  <script>
+    const slider = document.querySelector('.ba-slider');
+    const after = slider.querySelector('.after-img');
+    const handle = slider.querySelector('.slider-handle');
+
+    let isDragging = false;
+
+    const startDrag = (e) => {
+      isDragging = true;
+      e.preventDefault();
+    }
+
+    const stopDrag = () => {
+      isDragging = false;
+    }
+
+    const doDrag = (e) => {
+      if (!isDragging) return;
+      let sliderRect = slider.getBoundingClientRect();
+      let y;
+      if (e.touches) {
+        y = e.touches[0].clientY - sliderRect.top;
+      } else {
+        y = e.clientY - sliderRect.top;
+      }
+
+      // limitează între 0 și înălțimea sliderului
+      y = Math.max(0, Math.min(y, sliderRect.height));
+
+      after.style.height = y + 'px';
+      handle.style.top = y + 'px';
+    }
+
+    handle.addEventListener('mousedown', startDrag);
+    handle.addEventListener('touchstart', startDrag);
+
+    window.addEventListener('mouseup', stopDrag);
+    window.addEventListener('touchend', stopDrag);
+
+    window.addEventListener('mousemove', doDrag);
+    window.addEventListener('touchmove', doDrag);
+  </script>
+
+</body>
+</html>
+
         
         
         <!-- Facts Start -->
