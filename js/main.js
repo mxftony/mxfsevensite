@@ -79,30 +79,9 @@
     });
 
 
-    // Testimonials carousel
-    $(".testimonials-carousel").owlCarousel({
-        center: true,
-        autoplay: true,
-        smartSpeed: 2000,
-        dots: true,
-        loop: true,
-        responsive: {
-            0:{
-                items:1
-            },
-            576:{
-                items:1
-            },
-            768:{
-                items:2
-            },
-            992:{
-                items:3
-            }
-        }
-    });
-    
-    
+    // Testimonials carousel removed (testimonials section deleted)
+
+
     // Related post carousel
     $(".related-slider").owlCarousel({
         autoplay: true,
