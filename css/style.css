@@ -2172,3 +2172,85 @@ a:focus {
 }
 
 
+/*****************************/
+/* Mobile Sticky Contact Bar */
+/*****************************/
+
+/* Add bottom padding to body on mobile to prevent content being hidden */
+@media (max-width: 991px) {
+    body {
+        padding-bottom: 80px;
+    }
+}
+
+/* Sticky Contact Bar Container */
+.sticky-contact-bar {
+    display: none;
+    position: fixed;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    z-index: 1000;
+    gap: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Show on mobile devices only (below 992px) */
+@media (max-width: 991px) {
+    .sticky-contact-bar {
+        display: flex;
+    }
+}
+
+/* Contact Bar Button Styling */
+.sticky-contact-bar a {
+    flex: 1;
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.sticky-contact-bar a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* WhatsApp Button */
+.sticky-contact-bar .whatsapp-btn {
+    background-color: #25D366;
+    background: linear-gradient(135deg, #25D366, #20BA5A);
+}
+
+.sticky-contact-bar .whatsapp-btn:hover {
+    background: linear-gradient(135deg, #20BA5A, #1DA854);
+}
+
+/* Call Button */
+.sticky-contact-bar .call-btn {
+    background-color: #0066CC;
+    background: linear-gradient(135deg, #0066CC, #0052A3);
+}
+
+.sticky-contact-bar .call-btn:hover {
+    background: linear-gradient(135deg, #0052A3, #003D7A);
+}
+
+/* Icon styling */
+.sticky-contact-bar i {
+    font-size: 18px;
+}
+
